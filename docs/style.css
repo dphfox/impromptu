@@ -18,8 +18,7 @@
 body {
     display: grid;
     grid-template:
-        "prompter" 1fr
-        "toolbar" var(--toolbar-height) / 1fr;
+        "prompter toolbar" 1fr / 1fr auto;
 
     background-color: #000;
     color: #fff;
@@ -54,9 +53,11 @@ button:hover {
 }
 
 #toolbar {
+    grid-area: toolbar;
     background-color: #000;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
@@ -103,7 +104,8 @@ button:hover {
 
 #prompter > .scrolling-content {
     overflow-y: scroll;
+    scrollbar-width: none;
     width: 100%;
     height: 100%;
-    padding: calc(50vh - var(--toolbar-height) / 2 - 0.5em * var(--prompter-line-height)) calc(1rem * var(--prompter-padding));
+    padding: calc(50vh - 0.5em * var(--prompter-line-height)) calc(1rem * var(--prompter-padding));
 }

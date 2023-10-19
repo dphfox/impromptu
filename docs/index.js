@@ -21,21 +21,21 @@ function setIsFullscreen(nowIsFullscreen) {
 		isFullscreen 
 		? "--icon: url(/assets/icons/arrows-corners-in.svg)" 
 		: "--icon: url(/assets/icons/arrows-corners-out.svg)";
-	}
+}
 
 document.querySelector("#play-pause").addEventListener("click", () => {
 	setIsPlaying(!isPlaying);
-})
+});
 
 document.querySelector("#fullscreen").addEventListener("click", () => {
 	if(isFullscreen) {
-		document.exitFullscreen()
+		document.exitFullscreen();
 	} else {
-		document.body.requestFullscreen()
+		document.body.requestFullscreen();
 	}
-})
+});
 
-setIsFullscreen(document.fullscreenElement != null)
-document.addEventListener("fullscreenchange", (event) => {
-	setIsFullscreen(document.fullscreenElement != null)
+setIsFullscreen(document.fullscreenElement != null);
+document.addEventListener("fullscreenchange", () => {
+	setIsFullscreen(document.fullscreenElement != null);
 })
