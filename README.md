@@ -1,2 +1,2 @@
 # impromptu
-It prompts you.
+The minimal, focused teleprompter.
