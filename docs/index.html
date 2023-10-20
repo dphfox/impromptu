@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
@@ -6,34 +7,49 @@
 		<link rel="stylesheet" href="./style.css">
 		<script src="./index.js" defer></script>
 
-		<!-- Atkinson Hyperlegible -->
+		<!-- Google Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
 		<!-- DOMPurify -->
-		<script type="text/javascript" src="dist/purify.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
 
 		<!-- Marked -->
-		<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/marked@9.1.2/lib/marked.umd.min.js"></script>
 	</head>
-	<body>
+	<body data-is-playing="0" data-is-idle="0">
+		<noscript>
+			<h1>Honey, I JavaScript-ed the kids.</h1>
+			<p>
+				Teleprompters don't look good when they're static.
+			</p>
+			<p>
+				But without
+				JavaScript turned on, we can't implement key features like
+				skipping and auto-scrolling, which defeats the point of having a
+				teleprompter app.
+			</p>
+			<p>
+				To use impromptu, please enable JavaScript in your browser.
+			</p>
+		</noscript>
 		<section id="toolbar">
-			<button id="options">
+			<button id="options" data-tooltip="Options">
 				<span class="icon" style="--icon: url(/assets/icons/cog.svg)"></span>
 			</button>
 			<span class="flex-spacer"></span>
-			<button id="skip-back">
+			<button id="skip-back" data-tooltip="Skip back" data-shortcut="Left arrow">
 				<span class="icon" style="--icon: url(/assets/icons/arrow-left-line.svg)"></span>
 			</button>
-			<button id="play-pause">
+			<button id="play-pause" data-tooltip="Auto scrolling" data-shortcut="Space">
 				<span class="icon" style="--icon: url(/assets/icons/arrow-right.svg)"></span>
 			</button>
-			<button id="skipforward">
+			<button id="skip-forward" data-tooltip="Skip forward" data-shortcut="Right arrow">
 				<span class="icon" style="--icon: url(/assets/icons/arrow-right-line.svg)"></span>
 			</button>
 			<span class="flex-spacer"></span>
-			<button id="fullscreen">
+			<button id="fullscreen" data-tooltip="Full screen" data-shortcut="F">
 				<span class="icon" style="--icon: url(/assets/icons/arrows-corners-out.svg)"></span>
 			</button>
 		</section>
